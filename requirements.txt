@@ -1,0 +1,2 @@
+sky-wiremock==0.3.10
+chaostoolkit-lib>=0.22.0

@@ -1,0 +1,19 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "/epg",
+    "queryParameters": {
+      "episode_title": {
+        "matches": "([a-z]*)"
+      }
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+        "Content-Type": "application/json"
+    },
+    "bodyFileName": "epg.json",
+    "transformers": ["body-transformer"]
+  }
+}
