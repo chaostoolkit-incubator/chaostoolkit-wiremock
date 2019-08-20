@@ -25,3 +25,8 @@ notifications:
     on_start: always
     on_failure: always
     on_success: always
+
+addons:
+  apt:
+    packages:
+      - oracle-java8-set-default
