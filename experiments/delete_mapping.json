@@ -1,0 +1,55 @@
+{
+  "version": "1.0.0",
+  "title": "Delete mapping",
+  "description": "Experimenting with the Wiremock driver",
+  "tags": ["wiremock", "chaostoolkit"],
+  "configuration": {
+    "wiremock": {
+      "host": "localhost",
+      "port": 8080,
+      "timeout": 60,
+      "defaults": {
+        "down": {
+          "numberOfChunks": 4,
+          "totalDuration": 1000
+        }
+      }
+    }
+  },
+  "steady-state-hypothesis": {
+    "title": "WM server is running",
+    "probes": [
+      {
+        "type": "probe",
+        "name": "Wiremock server is running",
+        "tolerance": 200,
+        "provider": {
+          "type": "http",
+          "method": "GET",
+          "timeout": [1, 5],
+          "url": "http://localhost:8080/__admin/mappings",
+          "headers": {
+            "Accept": "application/json"
+          }
+        }
+      }
+    ]
+  },
+  "method": [{
+      "type": "action",
+      "name": "delete a mapping",
+      "provider": {
+        "type": "python",
+        "module": "chaoswm.actions",
+        "func": "delete_mappings",
+        "arguments": {
+          "filter": [{
+             "method": "GET",
+             "url": "/hello"
+          }]
+        }
+      }
+    }
+  ],
+  "rollbacks": []
+}

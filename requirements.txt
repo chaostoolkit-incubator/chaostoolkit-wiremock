@@ -1,0 +1,4 @@
+chaostoolkit-lib>=1.5.0
+typing
+logzero
+requests

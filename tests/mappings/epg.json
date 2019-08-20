@@ -1,0 +1,14 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "/epg"
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+        "Content-Type": "application/json"
+    },
+    "bodyFileName": "epg_static.json",
+    "transformers": ["body-transformer"]
+  }
+}
