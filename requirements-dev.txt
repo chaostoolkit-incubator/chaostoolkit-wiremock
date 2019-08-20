@@ -13,3 +13,4 @@ pytest-cov
 pytest-sugar
 logzero
 pylama==7.7.1
+wheel
