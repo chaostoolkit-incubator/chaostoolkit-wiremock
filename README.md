@@ -1,6 +1,7 @@
 chaostoolkit-wiremock
 =====================
 
+[![Build Status](https://travis-ci.com/chaostoolkit-incubator/chaostoolkit-wiremock.svg?branch=master)](https://travis-ci.com/chaostoolkit-incubator/chaostoolkit-wiremock)
 [![image](https://img.shields.io/pypi/v/chaoswm.svg)](https://pypi.python.org/pypi/chaoswm)
 
 [Chaos Toolkit][chaostoolkit] driver for [WireMock][wiremock]. 
