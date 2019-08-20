@@ -15,7 +15,7 @@ function run-test () {
     echo "Running the tests"
     wget -q -O wiremock.jar http://repo1.maven.org/maven2/com/github/tomakehurst/wiremock-standalone/2.24.1/wiremock-standalone-2.24.1.jar
     java -jar wiremock.jar &
-    pytest
+    sleep 30s && pytest
 }
 
 function release () {
