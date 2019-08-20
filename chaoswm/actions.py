@@ -38,7 +38,7 @@ def add_mappings(
 
 def populate_from_dir(
         dir: str = ".",
-        configuration: Configuration = {}) -> List[Any]:
+        configuration: Configuration = None) -> List[Any]:
     """ adds all mappings found in the passed folder
     returns the list of ids of the mappings added
     """

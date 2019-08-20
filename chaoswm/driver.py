@@ -13,8 +13,8 @@ import json
 import os
 from typing import Any, Dict, List, Mapping
 
-import requests
 from logzero import logger
+import requests
 
 from .utils import can_connect_to
 
@@ -24,7 +24,6 @@ class ConnectionError(Exception):
 
 
 class Wiremock(object):
-
     def __init__(
             self,
             host: str = None,
@@ -137,7 +136,8 @@ class Wiremock(object):
         """
         if not os.path.exists(dir):
             logger.error(
-                "[populate_from_dir]: directory {} does not exists".format(dir))
+                "[populate_from_dir]: directory {} does not exists".format(
+                    dir))
             return None
 
         ids = []
@@ -211,7 +211,8 @@ class Wiremock(object):
             logger.error("[fixed_delay]: Error retrieving mapping")
             return None
 
-        mapping_found["response"]["fixedDelayMilliseconds"] = fixedDelayMilliseconds
+        mapping_found["response"]["fixedDelayMilliseconds"] = \
+            fixedDelayMilliseconds
         return self.update_mapping(mapping_found["id"], mapping_found)
 
     def global_fixed_delay(self, fixedDelay: int) -> int:
@@ -280,11 +281,13 @@ class Wiremock(object):
                 "[chunked_dribble_delay]: parameter has to be a dictionary")
         if "numberOfChunks" not in chunkedDribbleDelay:
             logger.error(
-                "[chunked_dribble_delay]: attribute numberOfChunks not found in parameter")
+                "[chunked_dribble_delay]: attribute numberOfChunks not "
+                "found in parameter")
             return None
         if "totalDuration" not in chunkedDribbleDelay:
             logger.error(
-                "[chunked_dribble_delay]: attribute totalDuration not found in parameter")
+                "[chunked_dribble_delay]: attribute totalDuration not found "
+                "in parameter")
             return None
 
         mapping_found = self.mapping_by_request_exact_match(filter)

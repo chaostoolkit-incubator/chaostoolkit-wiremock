@@ -1,17 +1,20 @@
+from contextlib import closing
 import socket
+from typing import Any, Dict, Optional
+
 from logzero import logger
 
-from contextlib import closing
+__all__ = ["can_connect_to", "get_wm_params", "check_configuration"]
 
 
-def can_connect_to(host, port):
+def can_connect_to(host: str, port: int) -> bool:
     """ Test a connection to a host/port """
 
     with closing(socket.socket(socket.AF_INET, socket.SOCK_STREAM)) as sock:
         return bool(sock.connect_ex((host, port)) == 0)
 
 
-def get_wm_params(c: dict):
+def get_wm_params(c: Dict[str, Any]) -> Optional[Dict[str, Any]]:
     wm_conf = c.get("wiremock", {})
 
     host = wm_conf.get("host", None)
@@ -31,8 +34,9 @@ def get_wm_params(c: dict):
     return {"url": url, "timeout": timeout}
 
 
-def check_configuration(c: dict = {}):
+def check_configuration(c: Dict[str, Any] = None) -> bool:
+    c = c or {}
     if "wiremock" not in c:
         logger.error("Error: wiremock key not found in configuration section")
-        return -1
-    return 1
+        return False
+    return True
