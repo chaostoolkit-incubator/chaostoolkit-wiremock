@@ -21,7 +21,7 @@ Installation from source
 In order to use it, you need python 3.5+ in your environment.
 Once downloaded the project, cd into it and run:
 
-    pip install -r requirements_dev.txt
+    pip install -r requirements.txt -r requirements-dev.txt
     make clean && make test && make install
 
 Configuration
