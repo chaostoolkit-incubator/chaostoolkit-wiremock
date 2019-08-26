@@ -10,7 +10,7 @@ from chaoslib.types import Discovery, DiscoveredActivities
 name = "chaoswm"
 __author__ = """Marco Masetti"""
 __email__ = 'grubert65@gmail.com'
-__version__ = '0.0.3'
+__version__ = '0.1.0'
 __all__ = ["discover", "__version__"]
 
 
