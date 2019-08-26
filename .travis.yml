@@ -1,32 +1,28 @@
 language: python
-
 python:
-  - 3.5
-  - 3.6
-  - 3.7
-
+- 3.5
+- 3.6
+- 3.7
 install:
-  - pip install -U pip
-  - pip install --no-cache-dir -r requirements.txt -r requirements-dev.txt
-
+- pip install -U pip
+- pip install --no-cache-dir -r requirements.txt -r requirements-dev.txt
 env:
   global:
-  - PYPI_USER_NAME: "chaostoolkit"
-  - secure: "dTXdDMeqrP2oMTHneJPH0VYRRXI3acc7SQPNlTVGVKJhODlxQLtg6AHhFkF0jz0kvrGoKzwm1bnVw0ZurNc33Z3M6KeJ+53KMlIX/x7C1qc1d+GyqTapPSluQsC3/64uRxhVkA9mxnxLbkxwV/3GOXoTNLFeD6httx+fwDKYTJ75WF1DD6GdlOyiD2DOTfBTiPTc3mdGZuYk4ICdsBIeR9wxEBHBbxTfvlad5tIiCpsFv2oZlN2/ztmCHYszUr0nkP4H+jfOeTkTJon+a7fNdkYoyyU1SEBr4NwhGUR6CQHUxxMnN3OmmeQ3fuP7GgPCmodRTsFqW7sIAtLmYJX4TC/zRL2vGLXS1d4cR8F5IRty2M+10QLrp33WB8v8Lw0a4T36wzgDFd5tUEV/8pqopyqVsLIOsYEsvsg9V3VX6mYATj+HMou8oI0O+wd9qg3mK+wLK0pUJKz8xMWNlLu3rKdHpVq9rL3qeB9DU3hsXhmKL57LF40kyLnY+5PhrBv5Y3gLHI0IDM0eUzlFJ6Cwu4LFbVnP4ao57mIWdptpw2ZAUkQMQP54R52qblU6+qzAJfo1E6BDvEAvnkrihyhCGmWy8eKdcnbVvMcDMLH7BmoAuST8zaQHFhJbOTNoyaQgtp9c+7ZRap6wb+ekwBirgUQAC8GBoWUV1nnqbXSoEI4="
+  - PYPI_USER_NAME: chaostoolkit  
+  - secure: SvOsJVbKQDa2iqYApU5AN0C7LtWCjcdVbXB45EouLWLnx5ATc0PivjYcNvBC+5NQ7hPhMWgzsPLdHIf19ll5MTvgZRQYCWbEKJGppNqH/sWRHYZJ7n2hEeWwcrjwkNzjIl75M5sYsGITWEyFA+BDbNSiIBCIzROaj487xeSYLzVXC+tlqlu3h+HtAdjOJ8Hg0Qsb2vaW25WEF2OOz4pWeiqGRr1+w3FPFIz5iqo+K2RVMSg1kLpxujZphRtzPUCVqcm5TG2qPej5jC+yuruHcpBHKHYch5wfSSStqlfrnDIiaDGcu7xt4hY2B+JsRWcjdAi6t2nQOARtATV2OxufVend9e4+so8iJoOCevevzfXnRPSxls6w4uRBptZRVDmPCRND5JOd+NdaCLQkeXLqoJ/LIKZ2uAQRNj4HFbXZVqZM2uS4ODUeVY7kS71/BRzq89RqnOc14sVjYYcjBUJhOSOEKRmo917T/4OHZMntbumrkV9yHF1DQS/GVMo6Ohr8rRRjunPgKhIT/sTIV7W31Vb6IZWmVpFxn1ooCeE5zCNJhwWTqFzsLuEuQ37m+x0OcO+mRc7ZGGALJX2n2ZTogqPyccavIJDC1ek8opqhbeNpHBlvVuQ/uUhuUrdj9RBZfsKx8CnH78ytVDqNGW0TH6QHa1/f1PTV/gsadEUTveM=
 
-script: 
-  - bash ci.bash
+script:
+- bash ci.bash
 notifications:
   webhooks:
     urls:
-    - 'https://webhook.atomist.com/atomist/travis/teams/T76U4GPGF'
+    - https://webhook.atomist.com/atomist/travis/teams/T76U4GPGF
     on_cancel: always
     on_error: always
     on_start: always
     on_failure: always
     on_success: always
-
 addons:
   apt:
     packages:
-      - openjdk-8-jdk
+    - openjdk-8-jdk
