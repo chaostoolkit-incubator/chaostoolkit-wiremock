@@ -12,12 +12,12 @@ __all__ = [
 ]
 
 
-def server_running(c: Configuration = None) -> int:
-    if not check_configuration(c):
+def server_running(configuration: Configuration = None) -> int:
+    if not check_configuration(configuration):
         logger.error("Configuration error")
         return None
     try:
-        params = get_wm_params(c)
+        params = get_wm_params(configuration)
         Wiremock(url=params['url'], timeout=params['timeout'])
         return 1
     except ConnectionError:
@@ -25,11 +25,11 @@ def server_running(c: Configuration = None) -> int:
         return 0
 
 
-def mappings(c: Configuration = None) -> List[Any]:
-    if not check_configuration(c):
+def mappings(configuration: Configuration = None) -> List[Any]:
+    if not check_configuration(configuration):
         return []
     try:
-        params = get_wm_params(c)
+        params = get_wm_params(configuration)
         w = Wiremock(url=params['url'], timeout=params['timeout'])
         return w.mappings()
     except ConnectionError:
