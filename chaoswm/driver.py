@@ -54,7 +54,8 @@ class Wiremock(object):
         r = requests.get(
             self.mappings_url,
             headers=self.headers,
-            timeout=self.timeout)
+            timeout=self.timeout,
+            verify=False )
         if r.status_code != 200:
             logger.error(
                 "[mappings]:Error retrieving mappings: {}".format(
@@ -68,7 +69,8 @@ class Wiremock(object):
         r = requests.get(
             "{}/{}".format(self.mappings_url, id),
             headers=self.headers,
-            timeout=self.timeout)
+            timeout=self.timeout,
+            verify=False)
         if r.status_code != 200:
             logger.error(
                 "[mapping_by_id]:Error retrieving mapping: {}".format(
@@ -173,7 +175,8 @@ class Wiremock(object):
             self.mappings_url,
             headers=self.headers,
             data=json.dumps(mapping),
-            timeout=self.timeout)
+            timeout=self.timeout,
+            verify=False)
         if r.status_code != 201:
             logger.error("Error creating a mapping: " + r.text)
             return None
@@ -184,7 +187,8 @@ class Wiremock(object):
     def delete_mapping(self, id: str):
         r = requests.delete(
             "{}/{}".format(self.mappings_url, id),
-            timeout=self.timeout)
+            timeout=self.timeout,
+            verify=False)
         if r.status_code != 200:
             logger.error("Error deleting mapping {}: {}".format(id, r.text))
             return -1
@@ -220,7 +224,8 @@ class Wiremock(object):
             self.settings_url,
             headers=self.headers,
             data=json.dumps({"fixedDelay": fixedDelay}),
-            timeout=self.timeout)
+            timeout=self.timeout,
+            verify=False)
         if r.status_code != 200:
             logger.error(
                 "[global_fixed_delay]: Error setting delay: {}".format(
@@ -259,7 +264,8 @@ class Wiremock(object):
             self.settings_url,
             headers=self.headers,
             data=json.dumps({"delayDistribution": delayDistribution}),
-            timeout=self.timeout)
+            timeout=self.timeout,
+            verify=False)
         if r.status_code != 200:
             logger.error(
                 "[global_random_delay]: Error setting delay: {}".format(
@@ -324,7 +330,8 @@ class Wiremock(object):
         r = requests.post(
             self.reset_url,
             headers=self.headers,
-            timeout=self.timeout)
+            timeout=self.timeout,
+            verify=False)
         if r.status_code != 200:
             logger.error("[reset]:Error resetting wiremock server " + r.text)
             return -1

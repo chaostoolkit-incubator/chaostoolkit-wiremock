@@ -19,10 +19,9 @@ def get_wm_params(c: Dict[str, Any]) -> Optional[Dict[str, Any]]:
 
     host = wm_conf.get("host", None)
     port = wm_conf.get("port", None)
+    url = wm_conf.get("url", None)
     context_path = wm_conf.get("contextPath", "")
     timeout = wm_conf.get("timeout", 1)
-
-    url = ""
 
     if host and port:
         url = "http://{}:{}{}".format(host, port, context_path)
