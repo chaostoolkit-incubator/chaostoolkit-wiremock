@@ -8,6 +8,7 @@ chaostoolkit-lib = ">=1.5.0"
 typing = "*"
 logzero = "*"
 requests = "*"
+flake8 = "*"
 
 [dev-packages]
 bumpversion = ">=0.5.3"

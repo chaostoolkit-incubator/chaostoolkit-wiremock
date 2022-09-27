@@ -14,6 +14,7 @@
 - updated dependency management using **Pipenv**. `requirements.txt` and `requirements-dev.txt` files can now be generated from requirements lock file with `make requirements` (Python >= 3.9 only)
 - general code formatting using **black** and linting fixes
 - GitHub action to build/test and release
+- add flake8 to Pipenv.lock file
 
 ### Fixed
 
