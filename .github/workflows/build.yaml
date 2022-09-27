@@ -33,6 +33,10 @@ jobs:
       uses: actions/setup-python@v4
       with:
         python-version: '3.7'
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip setuptools wheel pipenv
+        pip install -r requirements.txt -r requirements-dev.txt
     - name: Lint chaoswm
       run: |
         make lint
@@ -50,6 +54,10 @@ jobs:
       uses: actions/setup-python@v4
       with:
         python-version: ${{ matrix.python-version }}
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip setuptools wheel pipenv
+        pip install -r requirements.txt -r requirements-dev.txt
     - name: Run tests
       run: |
         make test
