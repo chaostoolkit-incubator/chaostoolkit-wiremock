@@ -1,4 +1,4 @@
-.PHONY: clean clean-test clean-pyc clean-build help
+.PHONY: clean clean-test clean-pyc clean-build requirements help
 .DEFAULT_GOAL := help
 
 define BROWSER_PYSCRIPT
@@ -30,6 +30,7 @@ help:
 	@python -c "$$PRINT_HELP_PYSCRIPT" < $(MAKEFILE_LIST)
 
 clean: clean-build clean-pyc clean-test ## remove all build, test, coverage and Python artifacts
+	rm -f wiremock.jar
 
 clean-build: ## remove build artifacts
 	rm -fr build/
@@ -72,6 +73,10 @@ dist: clean ## builds source and wheel package
 	python setup.py sdist
 	python setup.py bdist_wheel
 	ls -l dist
+
+requirements:
+	pipenv requirements > requirements.txt
+	pipenv requirements --dev > requirements-dev.txt
 
 install: clean ## install the package to the active Python's site-packages
 	python setup.py install

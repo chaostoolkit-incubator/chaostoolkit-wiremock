@@ -1,0 +1,30 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+chaostoolkit-lib = ">=1.5.0"
+typing = "*"
+logzero = "*"
+requests = "*"
+
+[dev-packages]
+bumpversion = ">=0.5.3"
+wheel = ">=0.32.1"
+watchdog = ">=0.9.0"
+flake8 = ">=3.5.0"
+tox = ">=3.5.2"
+coverage = ">=4.5.1"
+twine = ">=1.12.1"
+pytest = ">=3.8.2"
+pytest-runner = ">=4.2"
+requests-mock = "*"
+pycodestyle = "*"
+pytest-cov = "*"
+pytest-sugar = "*"
+logzero = "*"
+pylama = "==7.7.1"
+
+[requires]
+python_version = "3"

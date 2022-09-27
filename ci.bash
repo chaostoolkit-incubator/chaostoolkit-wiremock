@@ -8,12 +8,12 @@ function lint () {
 
 function build () {
     echo "Building the chaostoolkit-aws package"
-    pip install -e .
+    pip install --editable .
 }
 
 function run-test () {
     echo "Running the tests"
-    wget -q -O wiremock.jar http://repo1.maven.org/maven2/com/github/tomakehurst/wiremock-standalone/2.24.1/wiremock-standalone-2.24.1.jar
+    wget -q -O wiremock.jar https://repo1.maven.org/maven2/com/github/tomakehurst/wiremock-jre8-standalone/2.33.2/wiremock-jre8-standalone-2.33.2.jar
     java -jar wiremock.jar &
     sleep 30s && pytest
 }

@@ -1,0 +1,35 @@
+[tool.black]
+# How many characters per line to allow.
+line-length = 79
+
+# Python versions that should be supported by Black's output.
+#target-version = ['py38']
+
+# A regular expression that matches files and
+# directories that should be included on
+# recursive searches. An empty value means all
+# files are included regardless of the name.
+include = '(\.pyi?|\.ipynb)$'
+
+# A regular expression that matches files and
+# directories that should be excluded on
+# recursive searches. An empty value means no
+# paths are excluded.
+exclude = '\.direnv|\.eggs|\.git|\.hg|\.mypy_cache|\.nox|\.tox|\.venv|venv|\.svn|_build|buck-out|build|dist'
+
+# Like --exclude, but adds additional files
+# and directories on top of the excluded ones.
+extend-exclude = '.*_metadata.py'
+
+# Like --exclude, but files and directories
+# matching this regex will be excluded even
+# when they are passed explicitly as
+# arguments.
+#force-exclude = 'test_generator.py'
+
+# Don't normalize string quotes or prefixes.
+skip-string-normalization = false
+
+# Don't use trailing commas as a reason to split lines.
+skip-magic-trailing-comma = false
+
