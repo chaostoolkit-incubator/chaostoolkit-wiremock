@@ -80,3 +80,6 @@ requirements:
 
 install: clean ## install the package to the active Python's site-packages
 	python setup.py install
+
+build:
+	python setup.py build

@@ -13,6 +13,7 @@
 - updated wiremock version used in continuous integration to latest stable `2.33.2`
 - updated dependency management using **Pipenv**. `requirements.txt` and `requirements-dev.txt` files can now be generated from requirements lock file with `make requirements` (Python >= 3.9 only)
 - general code formatting using **black** and linting fixes
+- GitHub action to build/test and release
 
 ### Fixed
 
@@ -25,6 +26,7 @@
 
 - moved from `setup.py` to `setup.cfg`
 - added a build system section to `pyproject.toml`
+- dropped travis
 
 ## [0.1.2][] - 2020-04-22
 
