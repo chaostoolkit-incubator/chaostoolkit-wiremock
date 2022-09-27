@@ -21,6 +21,10 @@
 - `fixed_delay` action updates all stub mappings matching the filter
 - `delete_mappings` mappings filter now works the same as all other actions
 
+### Changed
+
+- moved from `setup.py` to `setup.cfg`
+- added a build system section to `pyproject.toml`
 
 ## [0.1.2][] - 2020-04-22
 
